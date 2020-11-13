@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myBtn">Открыть окно</button> 
+    <div id="myModal" class="modal"> </div>
+    <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+          <h2>Шапка модального окна</h2>
+        </div>
+        <div class="modal-body">
+          <p>Напишите здесь что-нибудь важное</p>
+          <p>Добавьте что-нибудь менее важное...</p>
+        </div>
+        <div class="modal-footer">
+          <h3>Футер</h3>
+        </div>
+      </div>
+
+      <style>
+          .modal {
+              display: none; /* Скрыто по умолчанию */
+              background-color: rgb(0,0,0); /* Затемнение фона */
+              background-color: rgba(0,0,0,0.5); /* Полупрозрачное затемнение */
+              z-index: 1; /* Фон на нижнем слое */
+              overflow: auto; /* При необходимости, то появиться прокрутка */
+            }
+            .close {
+                font-size:  30px;
+                font-weight:  bold;
+            }
+            .modal-content {
+                animation-name: animate;
+                animation-duration: 0.5s
+            }
+            
+        </style>
+
+      <script>
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0]; 
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+      </script>
+</body>
+</html>
